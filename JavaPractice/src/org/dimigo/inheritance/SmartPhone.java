@@ -18,7 +18,7 @@ package org.dimigo.inheritance;
 public class SmartPhone {
 	
 	private String model;
-	private String comany;
+	private String company;
 	private int price;
 	
 	public SmartPhone() {
@@ -27,29 +27,41 @@ public class SmartPhone {
 	
 	public SmartPhone (String model, String company,int price ) {
 	   this.model= model;
-	   this.comany= company;
+	   this.company= company;
 	   this.price = price;
 	   
 	}
 	
 	public void turnOn() {
-		System.out.println("전원을 켭니다");
+		System.out.println(model + "의 전원을 꼅니다."); 
 	}
 	
 	public void turnOff() {
-		
+		System.out.println(model + "의 전원을 끕니다."); 
 		
 	}
 	
-	public void pay() {
-		
-	}
+	public void pay() {}
+	
+		public void useSpecialFunction(){  
+					
+					if(this instanceof IPhone) {  
+						IPhone i = new IPhone();  
+			 			i.useAirDrop();  
+			 		}  
+			 		else if(this instanceof Galaxy) {  
+			 			Galaxy g = new Galaxy();  
+			 			g.useWirelessCharging();  
+					}  
+				}  
 
 	
-	public String toString() {
-		return "SmartPhone [model=" + model + ", comany=" + comany + ", price="
-				+ price + "]";
-	}
+
+	
+	public String toString() {  
+		 	return "모엘명 : " + model + ", 제조사 : " + company + ", 가격 : " + String.format("%,1d", price);  
+		}  
+
 	
 	
 	
